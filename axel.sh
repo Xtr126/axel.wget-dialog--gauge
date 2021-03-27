@@ -13,7 +13,7 @@ XXX
 EOF
 done
 ) |
-dialog --title "Download in progress," "$@" --gauge "Xtr" 8 50 
+dialog --title "$URL" "$@" --gauge "Xtr" 8 50 
 }
 axel "$URL" | Loader
 sleep 10
