@@ -6,7 +6,7 @@ while read -r data
 do
 cat <<EOF
 XXX
-$(echo "$data" | stdbuf -o0 awk '{ print $2+0 }'
+$(echo "$data" | stdbuf -o0 awk '{ print $2+0 }')
 axel stdout-> $(echo "$data" | stdbuf -o0 awk '{ print $0 }')
 Download speed ->>>>> $(echo "$data" | stdbuf -o0 awk '{ print $8 }')
 XXX
