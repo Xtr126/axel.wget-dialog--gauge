@@ -14,7 +14,7 @@ XXX
 EOF
 done
 ) |
-dialog --title "Download in progress," "$@" --gauge "Xtr" 10 55
+dialog --title "$URL" "$@" --gauge "Xtr" 10 55
 }
 wget "$URL" 2>&1 | Loader
 
