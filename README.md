@@ -4,3 +4,6 @@ Code for this already exist on the internet, but they only show progress, no tim
 
 rsync and curl are planned in the future.
 It has high CPU usage. Please help me improve the code, tell me if you find any errors or if we can improve its efficiency, feedbacks are greatly appreciated.
+
+# Usage
+Change URL= to whatever you want and run bash axel.sh or bash wget.sh
