@@ -1,4 +1,4 @@
-
+#!/bin/bash
 Loader() {
 (
 while read -r data
