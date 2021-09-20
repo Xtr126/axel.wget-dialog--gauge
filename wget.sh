@@ -1,6 +1,5 @@
-URL="http://localhost:8000/"
 
-function Loader() {
+Loader() {
 (
 while read -r data
 do
@@ -16,5 +15,5 @@ done
 ) |
 dialog --title "$URL" "$@" --gauge "Xtr" 10 55
 }
-wget "$URL" 2>&1 | Loader
+wget "$@" 2>&1 | Loader
 
