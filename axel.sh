@@ -1,5 +1,4 @@
-URL="http://localhost:8000/"
-
+#!/bin/bash
 function Loader() {
 (
 while read -r data
@@ -15,6 +14,6 @@ done
 ) |
 dialog --title "$URL" "$@" --gauge "Xtr" 8 50 
 }
-axel "$URL" | Loader
-sleep 10
+axel "$@" | Loader
+sleep 5
 
