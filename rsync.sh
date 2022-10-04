@@ -11,18 +11,17 @@ if ! [ -x "$(command -v stdbuf)" ]; then echo "error: stdbuf not found"; exit 1;
 # 4 - (xfr#2167, ir-chk=1289/3895)  
 
 function process() {
-while read -a data
-do
-echo XXX
-echo "${data[1]//[!0-9]/}"
-echo "Transferred data -> ${data[0]}"
-echo "Speed ->>>>> ${data[2]}"
-echo "Time left -> ${data[3]}"
-echo "${data[4]} ${data[5]}" 
-echo XXX
-done
+    while read -a data; do
+        echo XXX
+        echo "${data[1]//[!0-9]/}"
+        echo "Transferred data -> ${data[0]}"
+        echo "Speed ->>>>> ${data[2]}"
+        echo "Time left -> ${data[3]}"
+        echo "${data[4]} ${data[5]}" 
+        echo XXX
+    done
 }
 
-stdbuf -i0 -o0 -e0 rsync -ah --info=progress2 "$@" |  tr '\r' '\n' | process | dialog --title "rsync $*" --gauge "Initializing.." 10 50
-
-
+stdbuf -o0 -e0 \
+rsync -ah --info=progress2 "$@" | stdbuf -o0 tr '\r' '\n' | process | \
+ dialog --title "rsync $*" --gauge "Initializing.." 10 50
