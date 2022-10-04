@@ -9,7 +9,7 @@ function process() {
         echo XXX
         echo "${data[1]//[!0-9]/}"
         echo "axel stdout -> ${data[@]}"
-        echo "Download speed ->>>>> ${data[8]}"
+        echo "Download speed >>>>> ${data[7]} ${data[8]}"
         echo XXX
     done
 }
